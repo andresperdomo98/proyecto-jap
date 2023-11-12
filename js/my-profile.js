@@ -43,7 +43,6 @@ function llenarCamposFormulario(datos) {
   segundoNombreInput.value = datos.segundoNombre;
   primerApellidoInput.value = datos.primerApellido;
   segundoApellidoInput.value = datos.segundoApellido;
-  emailUsuarioInput.value = datos.emailUsuario;
   telefonoInput.value = datos.telefono;
   // Llamamos a la función que prellena el campo de correo
   mailUsuario();
@@ -106,7 +105,6 @@ document.getElementById('guardarCambios').addEventListener('click', function (ev
   const telefono = telefonoInput.value.trim();
   const imagenInputFile = imagenInput.files[0];
   let imagen = '';
-
 
 
   // Si no se selecciona una imagen, simplemente validamos y guardamos los datos
