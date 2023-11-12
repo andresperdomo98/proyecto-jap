@@ -1,0 +1,352 @@
+.jumbotron,
+.card-body,
+.container,
+.site-header {
+  font-family: "Verdana", serif !important;
+}
+
+.jumbotron .display-4 {
+  font-weight: bold;
+}
+
+nav a {
+  text-decoration: none;
+}
+.dark-mode {
+  background-color: #222;
+  color: #fff;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.jumbotron {
+  height: 50vh;
+  padding: 5em inherit;
+  margin-bottom: 0;
+  background-color: #53c0fb;
+  background: url("../img/cover_back.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: black;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  text-shadow: 1px 1px 2px grey;
+}
+
+.jumbotron .lead {
+  font-size: 38px;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: 0.25rem;
+}
+
+.site-header a {
+  color: white;
+  transition: ease-in-out color 0.15s;
+}
+
+.site-header .dropdown-menu a {
+  color: black;
+}
+
+.dropzone {
+  border: 2px dashed #0087f7;
+  border-radius: 5px;
+  background: white;
+}
+
+.img-fit {
+  max-height: 100%;
+}
+
+.alert {
+  position: fixed;
+  top: 80px;
+  width: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+}
+
+.cursor-active {
+  cursor: pointer;
+}
+
+.left {
+  float: left;
+  padding: 4px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+#spinner-wrapper {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1021;
+  display: none;
+}
+
+main {
+  min-height: calc(100vh - 210px);
+}
+
+a.custom-card,
+a.custom-card:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.checked {
+  color: orange;
+}
+
+/* Estilos para el menú desplegable */
+.dropdown-menu {
+  background-color: #23272b; /* Color de fondo */
+  color: #ffffff; /* Color del texto */
+  border: none; /* Borde */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra */
+}
+
+.dropdown-item {
+  color: #ffffff; /* Color del texto de los elementos del menú */
+}
+
+.dropdown-item:hover {
+  background-color: #345f8a; /* Color de fondo al pasar el cursor sobre un elemento */
+}
+
+/* Estilos personalizados para los comentarios */
+.comentario {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.comentario .puntuacion {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.comentario .descripcion {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.comentario .usuario {
+  font-size: 12px;
+  color: #555;
+}
+
+.comentario .fecha {
+  font-size: 12px;
+  color: #888;
+}
+
+/* Estilo para las estrellas */
+.estrellas-container {
+  color: orange;
+}
+
+/* Estilos de controles de comentarios */
+#textarea {
+  resize: both; /* Permite redimensionar en ambas direcciones */
+  overflow: auto; /* Añade barras de desplazamiento cuando el contenido es demasiado grande */
+  min-width: 400px; /* Ancho mínimo por defecto */
+  min-height: 100px; /* Altura mínima por defecto */
+  max-width: 500px; /* Ancho máximo permitido */
+  max-height: 170px; /* Altura máxima permitida */
+}
+
+#mi-puntuacion {
+  padding: 8px 15px;
+  margin: 5px;
+  font-size: 14px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: #343a40 5px 5px 5px;
+}
+
+#mi-puntuacion:hover {
+  color: #fff;
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+#enviarComentario {
+  display: inline-block;
+  padding: 8px 15px;
+  margin: 5px;
+  font-size: 14px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: #343a40 5px 5px 5px;
+}
+
+#enviarComentario:hover {
+  color: #fff;
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+#enviarComentario:active {
+  background-color: #0a4067;
+  box-shadow: #343a40 5px 5px 5px;
+  transform: translateY(4px);
+}
+
+#seccionComentar {
+  margin-left: 20px;
+}
+
+/* Estilos para el Modo Oscuro */
+.dark-mode {
+  background-color: #1e1e1e; /* Fondo oscuro */
+  color: #ffffff; /* Texto en color claro */
+
+  /* Estilos para la barra de navegación */
+  .navbar-dark.bg-dark {
+    background-color: #333;
+  }
+
+  /* Estilos para otros elementos que desees personalizar en modo oscuro */
+}
+
+/* Estilo para todas las imágenes en el carrusel */
+#miCarrusel {
+  width: 60%; /* Redimensionar las imágenes */
+  display: block;
+  margin: 0 auto;
+}
+
+#relacionado {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15px, 1fr));
+  justify-items: center; /* Centra horizontalmente los elementos en las celdas */
+  text-align: center; /* Centra el texto en las celdas */
+}
+
+.producto-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Botón de finalizar compra */
+.btn-alargado {
+  width: 1000px; /* Ancho deseado para el botón */
+  display: block; /* Hacer que el botón sea un bloque para centrarlo */
+  margin: 0 auto; /* Centrar horizontalmente el botón */
+  margin-top: 45px;
+}
+
+/* Perfil */
+.form-group {
+  display: inline-block;
+  margin-right: 20px; /* Espacio entre los campos */
+  vertical-align: top; /* Alinea los campos en la parte superior */
+}
+
+.fotoPerfil {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #79868f;
+}

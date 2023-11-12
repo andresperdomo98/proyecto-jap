@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>eMercado - Todo lo que busques está aquí</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
+      rel="stylesheet"
+    />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/styles5.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 justify-content-between">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="categories.html">Categorías</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sell.html">Vender</a>
+            </li>
+            <li class="nav-item dropdown">
+              <!-- dropmenu -->
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="userDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <span id="usernameDropdown">Ingresar</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="my-profile.html">Perfil</a>
+                <a class="dropdown-item" href="cart.html">Mi Carrito</a>
+                <a class="dropdown-item" href="#" id="darkButton"
+                  >Modo Oscuro</a
+                >
+                <a class="dropdown-item" href="#" id="logout">Cerrar sesión</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container5">
+      <div class="row5">
+        <div class="col5">
+          <button id="ordenarAscendente" class="styled-button5">
+            Ordenar Ascendente
+          </button>
+        </div>
+        <div class="col5">
+          <button id="ordenarDescendente" class="styled-button5">
+            Ordenar Descendente
+          </button>
+        </div>
+        <div class="col5">
+          <button id="ordenarPorVendidos" class="styled-button5">
+            Ordenar por Vendidos
+          </button>
+        </div>
+        <div class="col5">
+          <label for="precioMin">Precio Mínimo:</label>
+          <input
+            type="number"
+            id="precioMin"
+            class="styled-input5"
+            placeholder="Mínimo"
+          />
+        </div>
+        <div class="col5">
+          <label for="precioMax">Precio Máximo:</label>
+          <input
+            type="number"
+            id="precioMax"
+            class="styled-input5"
+            placeholder="Máximo"
+          />
+        </div>
+        <div class="col5">
+          <button id="aplicarFiltros" class="styled-button5">
+            Aplicar Filtros
+          </button>
+        </div>
+        <div class="col5">
+          <button id="limpiarFiltros" class="styled-button5">
+            Limpiar Filtros
+          </button>
+        </div>
+      </div>
+      <div class="row5">
+        <div class="col5">
+          <input
+            type="search"
+            id="buscador"
+            class="styled-input5"
+            placeholder="Buscar productos..."
+          />
+        </div>
+      </div>
+    </div>
+
+    <main class="pb-5 container">
+      <div class="container">
+        <ul id="productos" class="facha"></ul>
+      </div>
+    </main>
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-end">
+          <a href="#">Volver arriba</a>
+        </p>
+        <p>
+          Este sitio forma parte de
+          <a href="https://jovenesaprogramar.edu.uy/" target="_blank"
+            >Jovenes a Programar</a
+          >
+        </p>
+      </div>
+    </footer>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

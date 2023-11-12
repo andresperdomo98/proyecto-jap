@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="categories.html">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <span id="usernameDropdown">Ingresar</span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="userDropdown">
+              <a class="dropdown-item" href="my-profile.html">Perfil</a>
+              <a class="dropdown-item" href="cart.html">Mi Carrito</a>
+              <a class="dropdown-item" href="#" id="darkButton">Modo Oscuro</a>
+              <a class="dropdown-item" href="#" id="logout">Cerrar sesión</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="container">
+      <!-- Contenido del carrito de compras -->
+      <div class="card mt-5">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h2>Carrito de Compras</h2>
+          <button id="LimpiarCarrito" class="btn btn-primary">Limpiar carrito</button>
+        </div>
+        <div class="card-body">
+          <h2 id="product-name"></h2>
+          <p>Costo: <span id="product-cost"></span> <span id="product-currency"></span></p>
+          <label for="product-quantity">Cantidad:</label>
+          <input type="number" id="product-quantity" class="form-control">
+          <!-- Aplicar clases para hacer la imagen más pequeña y con bordes redondeados -->
+          <img id="product-image" src="" alt="Imagen del producto" class="img-fluid rounded" style="max-width: 200px;">
+          <p>Subtotal: <span id="product-subtotal"></span></p>
+          <div id="otrasCompras"></div>
+        </div>
+      </div>
+    </div>
+
+    <form>
+      <div class="container">
+        <hr />
+        <h3> Tipo de envío </h3>
+
+
+        <input type="radio" class="tipodeenvio" name="tipodeenvio" value="premium" required> Premium 2 a 5 días (15%)<br>
+
+        <input type="radio" class="tipodeenvio" name="tipodeenvio" value="express" required> Express de 2 a 8 días (7%)<br>
+
+        <input type="radio" class="tipodeenvio" name="tipodeenvio" value="standard" required> Standard 12 a 15 días (5%)
+
+
+        <h3> Dirección de envío </h3>
+
+        <p> Calle </p>
+        <input type="text" id="calle" required>
+        <p> Número </p>
+        <input type="text" id="numero" required>
+        <p> Esquina </p>
+        <input type="text" id="esquina" required>
+
+    </form>
+    <hr />
+
+    <h3> Costos </h3>
+
+  <table class="table">
+    
+    <tr>
+      <td>Subtotal:</td> 
+      <td id="subtotal">USD 0.00</td> 
+    </tr>
+    <tr>
+      <td>Envio:</td> 
+      <td id="envio">USD 0.00</td> 
+    </tr>
+    <tr>
+      <td>Total:</td> 
+      <td id="total">USD  0.00</td> 
+    </tr>
+  </table>
+
+    <h3>Forma de pago</h3>
+    <!-- Button trigger modal -->
+    <span id="noSelectionText">No se ha seleccionado.</span>
+    <a href="#" data-bs-toggle="modal" data-bs-target="#modalCarrito">
+      Seleccionar
+    </a>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalCarritoLabel">Forma de pago</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <label class="radio-container">
+                <input class="formadepago" type="radio" name="opciones" value="opcion1" id="opcionCredito">
+                <span class="checkmark"></span>
+                Tarjeta de crédito
+              </label>
+
+              <hr>
+
+              <label for="numero-tarjeta">Número de Tarjeta</label>
+              <input type="text" class="form-control" id="numero-tarjeta" name="numero-tarjeta" disabled>
+
+              <label for="codigo-seguridad" class="ml-3">Código de Seg.</label>
+              <input type="text" class="form-control" id="codigo-seguridad" name="codigo-seguridad" maxlength="4" disabled>
+
+
+
+              <label for="vencimiento">Vencimiento (MM/AA)</label>
+              <input type="text" class="form-control" id="vencimiento" name="vencimiento" maxlength="5" disabled
+                placeholder="MM/AA">
+
+
+
+              <label class="radio-container">
+                <input type="radio" name="opciones" value="opcion2" id="opcionCuenta">
+                <span class="checkmark"></span>
+                Transferencia bancaria
+              </label>
+
+              <hr>
+
+              <label for="num-cuenta">Número de cuenta</label>
+              <input class="form-control" type="text" class="form-control" id="num-cuenta" name="numero-cuenta" disabled>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <button class="btn btn-primary btn-alargado" id="confirmarCompra">Confirmar Compra</button>
+    </div>
+    
+  </main>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-end">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles-login.css" rel="stylesheet"> <!-- hice un nuevo archivo css y lo vinculé -->
+</head>
+
+<body>
+  <main class="mt-5">
+    <section>
+      <h3>Por favor, inicia sesión</h3>
+      <form id="loginForm">
+        <label> Mail</label>
+        <input type="email" placeholder="Correo" id="email" required autofocus>
+        <!-- con autofocus colocamos el cursor en ese lugar al cargar la página -->
+        <label> Contraseña</label>
+        <input type="password" placeholder="Contraseña" id="contrasenia" required>
+        <input type="submit" value="Ingresar">
+      </form>
+      <p>No tienes una cuenta? <a href="signup.html">Registro</a></p>
+    </section>
+  </main><!-- <p id="login-message"></p>  Este es el parrafo donde se ingresan las alertas en la validación -->
+  <footer class="text-muted">
+    <div class="container">
+      <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a>
+      </p>
+    </div>
+  </footer>
+  <script src="js/login.js"></script>
+</body>
+
+</html>
