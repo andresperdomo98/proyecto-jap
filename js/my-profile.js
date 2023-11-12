@@ -107,44 +107,28 @@ document.getElementById('guardarCambios').addEventListener('click', function (ev
   const imagenInputFile = imagenInput.files[0];
   let imagen = '';
 
-  if (imagenInputFile) {
-    // Si se selecciona un archivo de imagen, lo leemos
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      imagen = e.target.result;
-      // Validamos campos antes de guardar
-      if (validarCampos(primerNombre, primerApellido, telefono)) {
-        // Guardamos datos en localStorage
-        guardarDatosEnLocalStorage(primerNombre, segundoNombre, primerApellido, segundoApellido, emailUsuario, telefono, imagen);
-        // Mostramos la imagen y llenamos los campos después de guardar
-        mostrarImagen();
-        llenarCamposFormulario({ primerNombre, segundoNombre, primerApellido, segundoApellido, emailUsuario, telefono });
-        alert("¡Datos guardados con éxito!");
-        location.reload();
-      }
-    };
-    reader.readAsDataURL(imagenInputFile);
-  } else {
-    // Si no se selecciona una imagen, simplemente validamos y guardamos los datos
-    if (validarCampos(primerNombre, primerApellido, telefono)) {
-      guardarDatosEnLocalStorage(primerNombre, segundoNombre, primerApellido, segundoApellido, emailUsuario, telefono, imagen);
-      // Mostramos la imagen y llenamos los campos después de guardar
-      mostrarImagen();
-      llenarCamposFormulario({ primerNombre, segundoNombre, primerApellido, segundoApellido, emailUsuario, telefono });
-      alert("¡Datos guardados con éxito!");
-      location.reload();
-    }
+
+
+  // Si no se selecciona una imagen, simplemente validamos y guardamos los datos
+  if (validarCampos(primerNombre, primerApellido, telefono)) {
+    guardarDatosEnLocalStorage(primerNombre, segundoNombre, primerApellido, segundoApellido, emailUsuario, telefono, imagen);
+    // Mostramos la imagen y llenamos los campos después de guardar
+    mostrarImagen();
+    llenarCamposFormulario({ primerNombre, segundoNombre, primerApellido, segundoApellido, emailUsuario, telefono });
+    alert("¡Datos guardados con éxito!");
+    location.reload();
   }
-});
+})
+
 
 // Función para validar campos obligatorios
 function validarCampos(primerNombre, primerApellido, telefono) {
-  if (!primerNombre || !primerApellido || !telefono) {
-    alert("Por favor, completa los campos obligatorios marcados con *.");
-    return false;
+    if (!primerNombre || !primerApellido || !telefono) {
+      alert("Por favor, completa los campos obligatorios marcados con *.");
+      return false;
+    }
+    return true;
   }
-  return true;
-}
 
 // Mostramos la imagen al cargar la página
 mostrarImagen();
