@@ -43,6 +43,7 @@ function llenarCamposFormulario(datos) {
   segundoNombreInput.value = datos.segundoNombre;
   primerApellidoInput.value = datos.primerApellido;
   segundoApellidoInput.value = datos.segundoApellido;
+  emailUsuarioInput.value = datos.emailUsuario;
   telefonoInput.value = datos.telefono;
   // Llamamos a la función que prellena el campo de correo
   mailUsuario();
@@ -93,6 +94,15 @@ imagenInput.addEventListener('change', function (event) {
   }
 });
 
+// Función para validar campos obligatorios
+function validarCampos(primerNombre, primerApellido, telefono) {
+  if (!primerNombre || !primerApellido || !telefono) {
+    alert("Por favor, completa los campos obligatorios marcados con *.");
+    return false;
+  }
+  return true;
+}
+
 // Evento para el botón "Guardar cambios"
 document.getElementById('guardarCambios').addEventListener('click', function (event) {
   event.preventDefault();
@@ -106,27 +116,35 @@ document.getElementById('guardarCambios').addEventListener('click', function (ev
   const imagenInputFile = imagenInput.files[0];
   let imagen = '';
 
-
-  // Si no se selecciona una imagen, simplemente validamos y guardamos los datos
-  if (validarCampos(primerNombre, primerApellido, telefono)) {
-    guardarDatosEnLocalStorage(primerNombre, segundoNombre, primerApellido, segundoApellido, emailUsuario, telefono, imagen);
-    // Mostramos la imagen y llenamos los campos después de guardar
-    mostrarImagen();
-    llenarCamposFormulario({ primerNombre, segundoNombre, primerApellido, segundoApellido, emailUsuario, telefono });
-    alert("¡Datos guardados con éxito!");
-    location.reload();
-  }
-})
-
-
-// Función para validar campos obligatorios
-function validarCampos(primerNombre, primerApellido, telefono) {
-    if (!primerNombre || !primerApellido || !telefono) {
-      alert("Por favor, completa los campos obligatorios marcados con *.");
-      return false;
+  if (imagenInputFile) {
+    // Si se selecciona un archivo de imagen, lo leemos
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      imagen = e.target.result;
+      // Validamos campos antes de guardar
+      if (validarCampos(primerNombre, primerApellido, telefono)) {
+        // Guardamos datos en localStorage
+        guardarDatosEnLocalStorage(primerNombre, segundoNombre, primerApellido, segundoApellido, emailUsuario, telefono, imagen);
+        // Mostramos la imagen y llenamos los campos después de guardar
+        mostrarImagen();
+        llenarCamposFormulario({ primerNombre, segundoNombre, primerApellido, segundoApellido, emailUsuario, telefono });
+        alert("¡Datos guardados con éxito!");
+        location.reload();
+      }
+    };
+    reader.readAsDataURL(imagenInputFile);
+  } else {
+    // Si no se selecciona una imagen, simplemente validamos y guardamos los datos
+    if (validarCampos(primerNombre, primerApellido, telefono)) {
+      guardarDatosEnLocalStorage(primerNombre, segundoNombre, primerApellido, segundoApellido, emailUsuario, telefono, imagen);
+      // Mostramos la imagen y llenamos los campos después de guardar
+      mostrarImagen();
+      llenarCamposFormulario({ primerNombre, segundoNombre, primerApellido, segundoApellido, emailUsuario, telefono });
+      alert("¡Datos guardados con éxito!");
+      location.reload();
     }
-    return true;
   }
+});
 
 // Mostramos la imagen al cargar la página
 mostrarImagen();
